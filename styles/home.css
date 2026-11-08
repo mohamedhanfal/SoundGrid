@@ -59,9 +59,13 @@
   width: 148px;
   height: 148px;
   border-radius: var(--radius-lg);
+  background: var(--cover-bg-calm);
   overflow: hidden;
   box-shadow: var(--shadow-cover);
   flex-shrink: 0;
+  position: relative;
+  display: grid;
+  place-items: center;
 }
 
 .sg-section {
@@ -121,14 +125,33 @@
   width: 100%;
   aspect-ratio: 1 / 1;
   border-radius: var(--radius-md);
+  background: var(--cover-bg-calm);
   overflow: hidden;
   position: relative;
+  display: grid;
+  place-items: center;
 }
 
-.playlist-card__art svg {
-  width: 100%;
-  height: 100%;
-  display: block;
+.playlist-card__art--indigo {
+  background: linear-gradient(145deg, #dfe7ff 0%, #ede2ff 100%);
+}
+
+.playlist-card__art--teal {
+  background: linear-gradient(145deg, #def7f4 0%, #e0f2fe 100%);
+}
+
+.playlist-card__art--purple {
+  background: linear-gradient(145deg, #f1e6ff 0%, #e2ebff 100%);
+}
+
+.playlist-card__art--blue {
+  background: linear-gradient(145deg, #dceeff 0%, #e8efff 100%);
+}
+
+.playlist-card__icon {
+  font-size: 3.6rem;
+  color: var(--primary-blue);
+  opacity: 0.85;
 }
 
 .playlist-card__title {

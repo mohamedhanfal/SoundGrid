@@ -1,7 +1,15 @@
 (function () {
   let isPlaying = false;
+  let isMuted = false;
+
   const playBtn = document.getElementById('player-btn-play');
+  const prevBtn = document.getElementById('player-btn-prev');
+  const nextBtn = document.getElementById('player-btn-next');
+  const shuffleBtn = document.getElementById('player-btn-shuffle');
+  const repeatBtn = document.getElementById('player-btn-repeat');
+  const muteBtn = document.getElementById('player-btn-mute');
   const headerPlayBtn = document.getElementById('btn-play-playlist');
+
   const titleEl = document.getElementById('player-song-title');
   const artistEl = document.getElementById('player-song-artist');
   const totalTimeEl = document.getElementById('player-time-total');
@@ -11,8 +19,8 @@
   function updatePlayButtonIcon() {
     if (!playBtn) return;
     playBtn.innerHTML = isPlaying
-      ? '<svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><rect x="6" y="5" width="4" height="14" rx="1" /><rect x="14" y="5" width="4" height="14" rx="1" /></svg>'
-      : '<svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" class="player-play-icon"><polygon points="6,4 20,12 6,20" /></svg>';
+      ? '<i class="ri-pause-fill"></i>'
+      : '<i class="ri-play-fill player-play-icon"></i>';
   }
 
   function selectSongRow(row) {
@@ -27,9 +35,34 @@
     updatePlayButtonIcon();
   }
 
+  function stepSong(direction) {
+    if (rows.length === 0) return;
+    const activeIndex = rows.findIndex((row) => row.classList.contains('is-active'));
+    const nextIndex = (activeIndex + direction + rows.length) % rows.length;
+    selectSongRow(rows[nextIndex]);
+  }
+
   playBtn?.addEventListener('click', () => {
     isPlaying = !isPlaying;
     updatePlayButtonIcon();
+  });
+
+  prevBtn?.addEventListener('click', () => stepSong(-1));
+  nextBtn?.addEventListener('click', () => stepSong(1));
+
+  shuffleBtn?.addEventListener('click', () => {
+    shuffleBtn.classList.toggle('is-active');
+  });
+
+  repeatBtn?.addEventListener('click', () => {
+    repeatBtn.classList.toggle('is-active');
+  });
+
+  muteBtn?.addEventListener('click', () => {
+    isMuted = !isMuted;
+    muteBtn.innerHTML = isMuted
+      ? '<i class="ri-volume-mute-line"></i>'
+      : '<i class="ri-volume-up-line"></i>';
   });
 
   headerPlayBtn?.addEventListener('click', () => {

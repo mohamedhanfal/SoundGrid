@@ -24,6 +24,8 @@
   justify-content: center;
   gap: 10px;
   margin-bottom: 24px;
+  color: var(--primary-blue);
+  font-size: 1.55rem;
 }
 
 .auth-card__brand-title {

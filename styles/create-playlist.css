@@ -35,6 +35,11 @@
   width: 110px;
   height: 110px;
   border-radius: 14px;
+  background: #dce8ff;
+  color: var(--primary-blue);
+  font-size: 2.8rem;
+  display: grid;
+  place-items: center;
   overflow: hidden;
 }
 
