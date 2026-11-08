@@ -141,12 +141,12 @@ export const INITIAL_PLAYLISTS = [
 ];
 
 export const CATEGORIES = [
-  { name: 'All', count: '120+ tracks', bg: '#eef4ff' },
-  { name: 'Calm', count: '28 tracks', bg: '#e6f0ff' },
-  { name: 'Pop', count: '42 tracks', bg: '#f1ebff' },
-  { name: 'Electronic', count: '34 tracks', bg: '#e6f7f5' },
-  { name: 'Classical', count: '19 tracks', bg: '#eef0ff' },
-  { name: 'Acoustic', count: '23 tracks', bg: '#fff1f2' }
+  { name: 'All', count: '120+ tracks', themeClass: 'category-tile--all' },
+  { name: 'Calm', count: '28 tracks', themeClass: 'category-tile--calm' },
+  { name: 'Pop', count: '42 tracks', themeClass: 'category-tile--pop' },
+  { name: 'Electronic', count: '34 tracks', themeClass: 'category-tile--electronic' },
+  { name: 'Classical', count: '19 tracks', themeClass: 'category-tile--classical' },
+  { name: 'Acoustic', count: '23 tracks', themeClass: 'category-tile--acoustic' }
 ];
 
 class Store {

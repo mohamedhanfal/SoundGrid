@@ -7,10 +7,10 @@ export function renderProfilePage(state) {
         <div class="profile-card__avatar">${state.user.initials}</div>
         <div>
           <span class="home-hero__tag">Account Profile</span>
-          <h1 style="font-size: 1.9rem; font-weight: 800; color: var(--text-dark); margin-bottom: 4px;">
+          <h1 class="profile-card__name">
             ${state.user.fullName}
           </h1>
-          <p style="color: var(--text-secondary); font-size: 0.94rem;">
+          <p class="profile-card__handle">
             @${state.user.name} • ${state.user.email}
           </p>
         </div>
@@ -31,7 +31,7 @@ export function renderProfilePage(state) {
         </div>
       </div>
 
-      <div style="display: flex; gap: 12px;">
+      <div class="profile-actions">
         <button type="button" class="btn btn--primary" id="profile-open-playlists">
           View My Playlists
         </button>

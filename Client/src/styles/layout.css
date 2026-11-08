@@ -209,6 +209,10 @@
   cursor: pointer;
 }
 
+#player-outlet {
+  grid-area: player;
+}
+
 .app-player {
   grid-area: player;
   height: var(--player-height);
@@ -320,6 +324,10 @@
   transform: scale(1.05);
 }
 
+.player-play-icon {
+  margin-left: 2px;
+}
+
 .player-timeline {
   display: flex;
   align-items: center;
@@ -340,12 +348,11 @@
 }
 
 .sg-slider {
-  -webkit-appearance: none;
-  appearance: none;
   width: 100%;
   height: 4px;
   border-radius: var(--radius-full);
-  background: linear-gradient(to right, var(--primary-blue) 20%, var(--slider-track) 20%);
+  background-color: var(--slider-track);
+  accent-color: var(--primary-blue);
   outline: none;
   cursor: pointer;
 }

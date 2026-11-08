@@ -26,6 +26,12 @@
   margin-bottom: 24px;
 }
 
+.auth-card__brand-title {
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: var(--text-dark);
+}
+
 .auth-card__title {
   font-size: 1.55rem;
   font-weight: 800;

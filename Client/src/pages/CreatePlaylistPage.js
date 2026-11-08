@@ -15,8 +15,8 @@ export function renderCreatePlaylistPage(state) {
 
       <form id="create-playlist-form">
         <div class="create-form-grid">
-          <div class="cover-dropzone" title="Choose cover style">
-            <div style="width: 110px; height: 110px; border-radius: 14px; overflow: hidden;">
+          <div class="cover-dropzone" title="Choose cover image">
+            <div class="cover-dropzone__preview">
               ${renderPlaylistCoverSVG('calm')}
             </div>
             <div class="cover-dropzone__title">Upload Cover Image</div>
@@ -45,7 +45,7 @@ export function renderCreatePlaylistPage(state) {
               ></textarea>
             </div>
 
-            <div style="display: flex; gap: 12px; margin-top: 4px;">
+            <div class="form-actions">
               <button type="submit" class="btn btn--primary">Save &amp; Open Playlist</button>
               <button type="button" class="btn btn--outline" id="btn-cancel-create">Cancel</button>
             </div>
@@ -62,15 +62,15 @@ export function renderCreatePlaylistPage(state) {
               .map(
                 (song, index) => `
                   <label class="song-check-row">
-                    <div style="display: flex; align-items: center; gap: 14px;">
-                      <span style="width: 24px; color: var(--text-muted); font-size: 0.85rem;">${index + 1}</span>
+                    <div class="song-check-row__left">
+                      <span class="song-check-row__index">${index + 1}</span>
                       <div>
-                        <div style="font-weight: 700; color: var(--text-dark);">${song.title}</div>
-                        <div style="font-size: 0.82rem; color: var(--text-secondary);">${song.artist} • ${song.album}</div>
+                        <div class="song-check-row__title">${song.title}</div>
+                        <div class="song-check-row__meta">${song.artist} • ${song.album}</div>
                       </div>
                     </div>
-                    <div style="display: flex; align-items: center; gap: 16px;">
-                      <span style="font-size: 0.85rem; color: var(--text-secondary);">${song.duration}</span>
+                    <div class="song-check-row__right">
+                      <span class="song-check-row__duration">${song.duration}</span>
                       <input type="checkbox" name="songIds" value="${song.id}" ${index < DEFAULT_CHECKED_COUNT ? 'checked' : ''} />
                     </div>
                   </label>

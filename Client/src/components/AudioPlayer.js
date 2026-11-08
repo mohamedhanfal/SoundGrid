@@ -64,7 +64,7 @@ export function renderAudioPlayer() {
                      <rect x="6" y="5" width="4" height="14" rx="1" />
                      <rect x="14" y="5" width="4" height="14" rx="1" />
                    </svg>`
-                : `<svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" style="margin-left: 2px;">
+                : `<svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" class="player-play-icon">
                      <polygon points="6,4 20,12 6,20" />
                    </svg>`
             }
@@ -107,7 +107,6 @@ export function renderAudioPlayer() {
             value="${progressPct}"
             class="sg-slider"
             id="player-scrubber"
-            style="background: linear-gradient(to right, var(--primary-blue) ${progressPct}%, var(--slider-track) ${progressPct}%);"
             aria-label="Seek timeline"
           />
           <span class="player-time player-time--end" id="player-time-total">${song.duration}</span>
@@ -140,7 +139,6 @@ export function renderAudioPlayer() {
             value="${effectiveVolume}"
             class="sg-slider"
             id="player-volume-slider"
-            style="background: linear-gradient(to right, var(--primary-blue) ${effectiveVolume}%, var(--slider-track) ${effectiveVolume}%);"
             aria-label="Volume"
           />
         </div>
@@ -197,8 +195,5 @@ export function updateAudioPlayerTimelineOnly() {
   const scrubber = document.getElementById('player-scrubber');
 
   if (currentEl) currentEl.textContent = formatSeconds(currentTime);
-  if (scrubber) {
-    scrubber.value = progressPct;
-    scrubber.style.background = `linear-gradient(to right, var(--primary-blue) ${progressPct}%, var(--slider-track) ${progressPct}%)`;
-  }
+  if (scrubber) scrubber.value = progressPct;
 }

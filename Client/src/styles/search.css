@@ -63,6 +63,34 @@
   color: var(--text-secondary);
 }
 
+.category-tile--all {
+  background-color: #eef4ff;
+}
+
+.category-tile--calm {
+  background-color: #e6f0ff;
+}
+
+.category-tile--pop {
+  background-color: #f1ebff;
+}
+
+.category-tile--electronic {
+  background-color: #e6f7f5;
+}
+
+.category-tile--classical {
+  background-color: #eef0ff;
+}
+
+.category-tile--acoustic {
+  background-color: #fff1f2;
+}
+
+.playlist-cards-grid--compact {
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+}
+
 .search-dual-results {
   display: grid;
   grid-template-columns: 1.4fr 1fr;

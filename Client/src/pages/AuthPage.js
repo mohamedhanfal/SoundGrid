@@ -14,7 +14,7 @@ export function renderAuthPage(state) {
             <rect x="15.5" y="5" width="2.6" height="14" rx="1.3" fill="#1a73e8" />
             <rect x="20" y="10" width="2.6" height="4" rx="1.3" fill="#60a5fa" />
           </svg>
-          <span style="font-size: 1.35rem; font-weight: 800; color: var(--text-dark);">SoundGrid</span>
+          <span class="auth-card__brand-title">SoundGrid</span>
         </div>
 
         <h1 class="auth-card__title">${isLogin ? 'Welcome Back' : 'Create Your Account'}</h1>

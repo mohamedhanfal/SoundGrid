@@ -68,7 +68,7 @@ function renderFullShell(state) {
           ${activeView.render(state)}
         </div>
       </main>
-      <div id="player-outlet" style="grid-area: player;">
+      <div id="player-outlet">
         ${renderAudioPlayer()}
       </div>
     </div>

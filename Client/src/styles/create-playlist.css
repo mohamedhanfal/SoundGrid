@@ -31,6 +31,13 @@
   transform: scale(1.01);
 }
 
+.cover-dropzone__preview {
+  width: 110px;
+  height: 110px;
+  border-radius: 14px;
+  overflow: hidden;
+}
+
 .cover-dropzone__title {
   font-size: 0.9rem;
   font-weight: 700;
@@ -75,6 +82,12 @@
   box-shadow: 0 0 0 3px rgba(26, 115, 232, 0.14);
 }
 
+.form-actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 4px;
+}
+
 .song-checklist {
   border: 1px solid var(--border-light);
   border-radius: var(--radius-md);
@@ -98,6 +111,39 @@
 
 .song-check-row:hover {
   background-color: var(--bg-row-hover);
+}
+
+.song-check-row__left {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.song-check-row__index {
+  width: 24px;
+  color: var(--text-muted);
+  font-size: 0.85rem;
+}
+
+.song-check-row__title {
+  font-weight: 700;
+  color: var(--text-dark);
+}
+
+.song-check-row__meta {
+  font-size: 0.82rem;
+  color: var(--text-secondary);
+}
+
+.song-check-row__right {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.song-check-row__duration {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
 }
 
 .song-check-row input[type="checkbox"] {

@@ -41,9 +41,8 @@ export function renderSearchPage(state) {
           ${CATEGORIES.map(
             (category) => `
               <div
-                class="category-tile js-category-tile ${activeCategory === category.name ? 'is-selected' : ''}"
+                class="category-tile js-category-tile ${category.themeClass} ${activeCategory === category.name ? 'is-selected' : ''}"
                 data-category="${category.name}"
-                style="background-color: ${category.bg};"
               >
                 <div class="category-tile__title">${category.name}</div>
                 <div class="category-tile__count">${category.count}</div>
@@ -93,7 +92,7 @@ export function renderSearchPage(state) {
             <h2 class="sg-section__title">Matching Playlists</h2>
           </div>
 
-          <div class="playlist-cards-grid" style="grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));">
+          <div class="playlist-cards-grid playlist-cards-grid--compact">
             ${matchingPlaylists
               .map(
                 (playlist) => `
