@@ -28,6 +28,13 @@
   font-size: 1.55rem;
 }
 
+.auth-card__brand .brand-logo-img {
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+  display: block;
+}
+
 .auth-card__brand-title {
   font-size: 1.35rem;
   font-weight: 800;

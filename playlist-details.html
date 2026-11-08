@@ -26,7 +26,7 @@
           <div>
             <a href="index.html" class="sidebar-brand">
               <span class="sidebar-brand__icon" aria-hidden="true">
-                <i class="ri-rhythm-line"></i>
+                <img src="resources/SoundGrid logo.png" alt="SoundGrid Logo" class="brand-logo-img" />
               </span>
               <span class="sidebar-brand__title">SoundGrid</span>
             </a>
@@ -107,22 +107,26 @@
             </div>
           </header>
 
-          <div class="view-container">
+          <div class="view-container" id="playlist-details-view">
             <section class="playlist-header" aria-label="Playlist Overview">
               <div class="playlist-cover-art">
-                <i class="ri-music-2-fill cover-decor-note"></i>
-                <i class="ri-headphone-fill cover-main-icon"></i>
+                <img
+                  src="resources/covers/alan walker cover.jpg"
+                  alt="Playlist Cover"
+                  id="playlist-header-cover"
+                  class="playlist-cover-art__img"
+                />
                 <i class="ri-play-circle-fill cover-play-badge"></i>
               </div>
 
               <div class="playlist-info">
-                <h1 class="playlist-info__title">Calm Vibes</h1>
+                <h1 class="playlist-info__title" id="playlist-header-title">Alan Walker Hits</h1>
                 <div class="playlist-info__meta">
-                  <span>By your username</span>
+                  <span id="playlist-header-curator">By SK</span>
                   <span class="playlist-info__dot">&bull;</span>
-                  <span>28 songs</span>
+                  <span id="playlist-header-count">5 songs</span>
                   <span class="playlist-info__dot">&bull;</span>
-                  <span>1h 32m</span>
+                  <span id="playlist-header-duration">16m 09s</span>
                 </div>
 
                 <div class="playlist-info__actions">
@@ -155,18 +159,19 @@
                     <th class="col-more"></th>
                   </tr>
                 </thead>
-                <tbody>
+                <tbody id="playlist-tracks-body">
                   <tr
                     class="js-song-row is-active"
-                    data-title="Night Changes"
-                    data-artist="One Direction"
-                    data-duration="3:46"
+                    data-title="Faded"
+                    data-artist="Alan Walker"
+                    data-duration="3:32"
+                    data-cover="resources/covers/alan walker cover.jpg"
                   >
                     <td class="col-num">1</td>
-                    <td class="col-title">Night Changes</td>
-                    <td class="col-artist">One Direction</td>
-                    <td class="col-album">Midnight Memories</td>
-                    <td class="col-duration">3:46</td>
+                    <td class="col-title">Faded</td>
+                    <td class="col-artist">Alan Walker</td>
+                    <td class="col-album">Different World</td>
+                    <td class="col-duration">3:32</td>
                     <td class="col-more">
                       <button
                         type="button"
@@ -182,6 +187,7 @@
                     data-title="Alone"
                     data-artist="Alan Walker"
                     data-duration="2:40"
+                    data-cover="resources/covers/alan walker cover.jpg"
                   >
                     <td class="col-num">2</td>
                     <td class="col-title">Alone</td>
@@ -200,35 +206,15 @@
                   </tr>
                   <tr
                     class="js-song-row"
-                    data-title="Treat You Better"
-                    data-artist="Shawn Mendes"
-                    data-duration="3:07"
+                    data-title="On My Way"
+                    data-artist="Alan Walker, Sabrina Carpenter"
+                    data-duration="3:13"
+                    data-cover="resources/covers/alan walker cover.jpg"
                   >
                     <td class="col-num">3</td>
-                    <td class="col-title">Treat You Better</td>
-                    <td class="col-artist">Shawn Mendes</td>
-                    <td class="col-album">Illuminate</td>
-                    <td class="col-duration">3:07</td>
-                    <td class="col-more">
-                      <button
-                        type="button"
-                        class="track-more-btn"
-                        aria-label="More options"
-                      >
-                        <i class="ri-more-fill"></i>
-                      </button>
-                    </td>
-                  </tr>
-                  <tr
-                    class="js-song-row"
-                    data-title="On My Way"
-                    data-artist="Alan Walker"
-                    data-duration="3:13"
-                  >
-                    <td class="col-num">4</td>
                     <td class="col-title">On My Way</td>
-                    <td class="col-artist">Alan Walker</td>
-                    <td class="col-album">On My Way</td>
+                    <td class="col-artist">Alan Walker, Sabrina Carpenter</td>
+                    <td class="col-album">World of Walker</td>
                     <td class="col-duration">3:13</td>
                     <td class="col-more">
                       <button
@@ -242,15 +228,38 @@
                   </tr>
                   <tr
                     class="js-song-row"
-                    data-title="Starboy"
-                    data-artist="The Weeknd"
-                    data-duration="3:50"
+                    data-title="The Spectre"
+                    data-artist="Alan Walker"
+                    data-duration="3:13"
+                    data-cover="resources/covers/alan walker cover.jpg"
+                  >
+                    <td class="col-num">4</td>
+                    <td class="col-title">The Spectre</td>
+                    <td class="col-artist">Alan Walker</td>
+                    <td class="col-album">The Spectre</td>
+                    <td class="col-duration">3:13</td>
+                    <td class="col-more">
+                      <button
+                        type="button"
+                        class="track-more-btn"
+                        aria-label="More options"
+                      >
+                        <i class="ri-more-fill"></i>
+                      </button>
+                    </td>
+                  </tr>
+                  <tr
+                    class="js-song-row"
+                    data-title="Darkside"
+                    data-artist="Alan Walker ft. Au/Ra"
+                    data-duration="3:31"
+                    data-cover="resources/covers/alan walker cover.jpg"
                   >
                     <td class="col-num">5</td>
-                    <td class="col-title">Starboy</td>
-                    <td class="col-artist">The Weeknd</td>
-                    <td class="col-album">Starboy</td>
-                    <td class="col-duration">3:50</td>
+                    <td class="col-title">Darkside</td>
+                    <td class="col-artist">Alan Walker ft. Au/Ra</td>
+                    <td class="col-album">Different World</td>
+                    <td class="col-duration">3:31</td>
                     <td class="col-more">
                       <button
                         type="button"
@@ -270,14 +279,18 @@
         <footer class="app-player" aria-label="Audio Player">
           <div class="player-now-playing">
             <div class="player-thumb">
-              <i class="ri-disc-fill"></i>
+              <img
+                src="resources/covers/alan walker cover.jpg"
+                alt="Now Playing"
+                id="player-thumb-img"
+              />
             </div>
             <div class="player-meta">
               <div class="player-meta__title" id="player-song-title">
-                Night Changes
+                Faded
               </div>
               <div class="player-meta__artist" id="player-song-artist">
-                One Direction
+                Alan Walker
               </div>
             </div>
           </div>
@@ -342,7 +355,7 @@
                 aria-label="Seek timeline"
               />
               <span class="player-time player-time--end" id="player-time-total"
-                >3:46</span
+                >3:32</span
               >
             </div>
           </div>

@@ -27,7 +27,7 @@
           <div>
             <a href="index.html" class="sidebar-brand">
               <span class="sidebar-brand__icon" aria-hidden="true">
-                <i class="ri-rhythm-line"></i>
+                <img src="resources/SoundGrid logo.png" alt="SoundGrid Logo" class="brand-logo-img" />
               </span>
               <span class="sidebar-brand__title">SoundGrid</span>
             </a>
@@ -109,11 +109,10 @@
           <div class="view-container">
             <section class="home-hero" aria-label="Featured Playlist Banner">
               <div class="home-hero__content">
-                <span class="home-hero__tag">Featured Collection</span>
-                <h1 class="home-hero__title">Daily Calm &amp; Focus Mix</h1>
+                <span class="home-hero__tag">Featured Creator Playlist</span>
+                <h1 class="home-hero__title">Alan Walker Hits</h1>
                 <p class="home-hero__subtitle">
-                  Play saved playlists, manage your personal music library, and
-                  keep audio running across pages.
+                  Signature electronic melodies, driving beats, and cinematic synth anthems featuring Faded, Alone, and On My Way.
                 </p>
                 <div class="home-hero__actions">
                   <button
@@ -124,15 +123,18 @@
                     <i class="ri-play-fill"></i>
                     <span>Listen Now</span>
                   </button>
-                  <a href="playlist-details.html" class="btn btn--outline">
-                    <span>Open Calm Vibes</span>
+                  <a href="playlist-details.html?creator=alan-walker" class="btn btn--outline">
+                    <span>Open Playlist</span>
                   </a>
                 </div>
               </div>
 
               <div class="home-hero__art">
-                <i class="ri-music-2-fill cover-decor-note"></i>
-                <i class="ri-headphone-fill cover-main-icon"></i>
+                <img
+                  src="resources/covers/alan walker cover.jpg"
+                  alt="Alan Walker Hits"
+                  class="home-hero__art-img"
+                />
                 <i class="ri-play-circle-fill cover-play-badge"></i>
               </div>
             </section>
@@ -146,58 +148,58 @@
               </div>
 
               <div class="playlist-cards-grid">
-                <a href="playlist-details.html" class="playlist-card">
+                <a href="playlist-details.html?creator=alan-walker" class="playlist-card">
                   <div class="playlist-card__art">
-                    <i class="ri-headphone-fill playlist-card__icon"></i>
+                    <img src="resources/covers/alan walker cover.jpg" alt="Alan Walker Hits" class="playlist-card__img" />
                     <i class="ri-play-circle-fill cover-play-badge"></i>
                   </div>
-                  <div class="playlist-card__title">Calm Vibes</div>
+                  <div class="playlist-card__title">Alan Walker Hits</div>
                   <div class="playlist-card__meta">
-                    By your username &bull; 28 songs
+                    By SK &bull; 5 songs
                   </div>
                 </a>
 
-                <a href="playlist-details.html" class="playlist-card">
-                  <div class="playlist-card__art playlist-card__art--indigo">
-                    <i class="ri-disc-fill playlist-card__icon"></i>
+                <a href="playlist-details.html?creator=the-weeknd" class="playlist-card">
+                  <div class="playlist-card__art">
+                    <img src="resources/covers/weeknd cover.jpg" alt="The Weeknd Collection" class="playlist-card__img" />
                     <i class="ri-play-circle-fill cover-play-badge"></i>
                   </div>
-                  <div class="playlist-card__title">Midnight Coding</div>
+                  <div class="playlist-card__title">The Weeknd Collection</div>
                   <div class="playlist-card__meta">
-                    By Mohamed hanfal &bull; 18 songs
+                    By Mohamed hanfal &bull; 5 songs
                   </div>
                 </a>
 
-                <a href="playlist-details.html" class="playlist-card">
-                  <div class="playlist-card__art playlist-card__art--teal">
-                    <i class="ri-music-2-fill playlist-card__icon"></i>
+                <a href="playlist-details.html?creator=michael-jackson" class="playlist-card">
+                  <div class="playlist-card__art">
+                    <img src="resources/covers/mj cover.jpg" alt="King of Pop: Michael Jackson" class="playlist-card__img" />
                     <i class="ri-play-circle-fill cover-play-badge"></i>
                   </div>
-                  <div class="playlist-card__title">Acoustic Mornings</div>
+                  <div class="playlist-card__title">King of Pop: Michael Jackson</div>
                   <div class="playlist-card__meta">
-                    By Nethmini &bull; 15 songs
+                    By Vidura &bull; 5 songs
                   </div>
                 </a>
 
-                <a href="playlist-details.html" class="playlist-card">
-                  <div class="playlist-card__art playlist-card__art--purple">
-                    <i class="ri-album-fill playlist-card__icon"></i>
+                <a href="playlist-details.html?creator=thefatrat" class="playlist-card">
+                  <div class="playlist-card__art">
+                    <img src="resources/covers/thefatrat cover.jpg" alt="TheFatRat Gaming Anthems" class="playlist-card__img" />
                     <i class="ri-play-circle-fill cover-play-badge"></i>
                   </div>
-                  <div class="playlist-card__title">Pop Essentials</div>
+                  <div class="playlist-card__title">TheFatRat Gaming Anthems</div>
                   <div class="playlist-card__meta">
-                    By Osadi &bull; 24 songs
+                    By Nethmini &bull; 5 songs
                   </div>
                 </a>
 
-                <a href="playlist-details.html" class="playlist-card">
-                  <div class="playlist-card__art playlist-card__art--blue">
-                    <i class="ri-voiceprint-fill playlist-card__icon"></i>
+                <a href="playlist-details.html?creator=sid-sriram" class="playlist-card">
+                  <div class="playlist-card__art">
+                    <img src="resources/covers/sid.jpg" alt="Sid Sriram Essentials" class="playlist-card__img" />
                     <i class="ri-play-circle-fill cover-play-badge"></i>
                   </div>
-                  <div class="playlist-card__title">Classical Focus</div>
+                  <div class="playlist-card__title">Sid Sriram Essentials</div>
                   <div class="playlist-card__meta">
-                    By Vidhura &bull; 20 songs
+                    By Osadi &bull; 5 songs
                   </div>
                 </a>
               </div>
@@ -226,15 +228,16 @@
                   <tbody>
                     <tr
                       class="js-song-row is-active"
-                      data-title="Night Changes"
-                      data-artist="One Direction"
-                      data-duration="3:46"
+                      data-title="Faded"
+                      data-artist="Alan Walker"
+                      data-duration="3:32"
+                      data-cover="resources/covers/alan walker cover.jpg"
                     >
                       <td class="col-num">1</td>
-                      <td class="col-title">Night Changes</td>
-                      <td class="col-artist">One Direction</td>
-                      <td class="col-album">Midnight Memories</td>
-                      <td class="col-duration">3:46</td>
+                      <td class="col-title">Faded</td>
+                      <td class="col-artist">Alan Walker</td>
+                      <td class="col-album">Different World</td>
+                      <td class="col-duration">3:32</td>
                       <td class="col-more">
                         <button
                           type="button"
@@ -247,15 +250,16 @@
                     </tr>
                     <tr
                       class="js-song-row"
-                      data-title="Alone"
-                      data-artist="Alan Walker"
-                      data-duration="2:40"
+                      data-title="Blinding Lights"
+                      data-artist="The Weeknd"
+                      data-duration="3:20"
+                      data-cover="resources/covers/weeknd cover.jpg"
                     >
                       <td class="col-num">2</td>
-                      <td class="col-title">Alone</td>
-                      <td class="col-artist">Alan Walker</td>
-                      <td class="col-album">Alone</td>
-                      <td class="col-duration">2:40</td>
+                      <td class="col-title">Blinding Lights</td>
+                      <td class="col-artist">The Weeknd</td>
+                      <td class="col-album">After Hours</td>
+                      <td class="col-duration">3:20</td>
                       <td class="col-more">
                         <button
                           type="button"
@@ -268,15 +272,60 @@
                     </tr>
                     <tr
                       class="js-song-row"
-                      data-title="Treat You Better"
-                      data-artist="Shawn Mendes"
-                      data-duration="3:07"
+                      data-title="Billie Jean"
+                      data-artist="Michael Jackson"
+                      data-duration="4:54"
+                      data-cover="resources/covers/mj cover.jpg"
                     >
                       <td class="col-num">3</td>
-                      <td class="col-title">Treat You Better</td>
-                      <td class="col-artist">Shawn Mendes</td>
-                      <td class="col-album">Illuminate</td>
-                      <td class="col-duration">3:07</td>
+                      <td class="col-title">Billie Jean</td>
+                      <td class="col-artist">Michael Jackson</td>
+                      <td class="col-album">Thriller</td>
+                      <td class="col-duration">4:54</td>
+                      <td class="col-more">
+                        <button
+                          type="button"
+                          class="track-more-btn"
+                          aria-label="More options"
+                        >
+                          <i class="ri-more-fill"></i>
+                        </button>
+                      </td>
+                    </tr>
+                    <tr
+                      class="js-song-row"
+                      data-title="Unity"
+                      data-artist="TheFatRat"
+                      data-duration="4:09"
+                      data-cover="resources/covers/thefatrat cover.jpg"
+                    >
+                      <td class="col-num">4</td>
+                      <td class="col-title">Unity</td>
+                      <td class="col-artist">TheFatRat</td>
+                      <td class="col-album">Unity</td>
+                      <td class="col-duration">4:09</td>
+                      <td class="col-more">
+                        <button
+                          type="button"
+                          class="track-more-btn"
+                          aria-label="More options"
+                        >
+                          <i class="ri-more-fill"></i>
+                        </button>
+                      </td>
+                    </tr>
+                    <tr
+                      class="js-song-row"
+                      data-title="Srivalli"
+                      data-artist="Sid Sriram"
+                      data-duration="3:41"
+                      data-cover="resources/covers/sid.jpg"
+                    >
+                      <td class="col-num">5</td>
+                      <td class="col-title">Srivalli</td>
+                      <td class="col-artist">Sid Sriram</td>
+                      <td class="col-album">Pushpa: The Rise</td>
+                      <td class="col-duration">3:41</td>
                       <td class="col-more">
                         <button
                           type="button"
@@ -297,14 +346,18 @@
         <footer class="app-player" aria-label="Audio Player">
           <div class="player-now-playing">
             <div class="player-thumb">
-              <i class="ri-disc-fill"></i>
+              <img
+                src="resources/covers/alan walker cover.jpg"
+                alt="Now Playing"
+                id="player-thumb-img"
+              />
             </div>
             <div class="player-meta">
               <div class="player-meta__title" id="player-song-title">
-                Night Changes
+                Faded
               </div>
               <div class="player-meta__artist" id="player-song-artist">
-                One Direction
+                Alan Walker
               </div>
             </div>
           </div>
@@ -365,7 +418,7 @@
                 aria-label="Seek timeline"
               />
               <span class="player-time player-time--end" id="player-time-total"
-                >3:46</span
+                >3:32</span
               >
             </div>
           </div>

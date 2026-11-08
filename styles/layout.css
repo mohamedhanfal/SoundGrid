@@ -38,6 +38,13 @@
   color: var(--primary-blue);
 }
 
+.brand-logo-img {
+  width: 28px;
+  height: 28px;
+  object-fit: contain;
+  display: block;
+}
+
 .sidebar-brand__title {
   font-size: 1.3rem;
   font-weight: 800;
