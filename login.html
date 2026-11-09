@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SoundGrid - Sign In</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles/variables.css" />
+    <link rel="stylesheet" href="styles/global.css" />
+    <link rel="stylesheet" href="styles/create-playlist.css" />
+    <link rel="stylesheet" href="styles/auth.css" />
+  </head>
+  <body>
+    <div id="app">
+      <div class="auth-screen">
+        <div class="auth-card">
+          <div class="auth-card__brand">
+            <img
+              src="resources/SoundGrid logo.png"
+              alt="SoundGrid Logo"
+              class="brand-logo-img"
+            />
+            <span class="auth-card__brand-title">SoundGrid</span>
+          </div>
+
+          <h1 class="auth-card__title">Welcome Back</h1>
+          <p class="auth-card__subtitle">
+            Sign in to access your Calm Vibes and personal playlists
+          </p>
+
+          <form class="auth-form" action="playlist-details.html">
+            <div class="form-group">
+              <label for="auth-email">Email Address</label>
+              <input
+                type="email"
+                id="auth-email"
+                class="form-control"
+                value="hanfal@soundgrid.io"
+                required
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="auth-password">Password</label>
+              <input
+                type="password"
+                id="auth-password"
+                class="form-control"
+                value="password123"
+                required
+              />
+            </div>
+
+            <button type="submit" class="btn btn--primary auth-submit-btn">
+              Sign In to SoundGrid
+            </button>
+          </form>
+
+          <div class="auth-switch">
+            Don't have an account?
+            <a href="register.html"><button type="button">Register</button></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

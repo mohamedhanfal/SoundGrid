@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SoundGrid - Register</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles/variables.css" />
+    <link rel="stylesheet" href="styles/global.css" />
+    <link rel="stylesheet" href="styles/create-playlist.css" />
+    <link rel="stylesheet" href="styles/auth.css" />
+  </head>
+  <body>
+    <div id="app">
+      <div class="auth-screen">
+        <div class="auth-card">
+          <div class="auth-card__brand">
+            <img
+              src="resources/SoundGrid logo.png"
+              alt="SoundGrid Logo"
+              class="brand-logo-img"
+            />
+            <span class="auth-card__brand-title">SoundGrid</span>
+          </div>
+
+          <h1 class="auth-card__title">Create Your Account</h1>
+          <p class="auth-card__subtitle">
+            Create an account to build and stream your playlists
+          </p>
+
+          <form class="auth-form" action="playlist-details.html">
+            <div class="form-group">
+              <label for="auth-name">Username</label>
+              <input
+                type="text"
+                id="auth-name"
+                class="form-control"
+                placeholder="your username"
+                required
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="auth-email">Email Address</label>
+              <input
+                type="email"
+                id="auth-email"
+                class="form-control"
+                placeholder="hanfal@soundgrid.io"
+                required
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="auth-password">Password</label>
+              <input
+                type="password"
+                id="auth-password"
+                class="form-control"
+                placeholder="Enter password"
+                required
+              />
+            </div>
+
+            <button type="submit" class="btn btn--primary auth-submit-btn">
+              Create Account
+            </button>
+          </form>
+
+          <div class="auth-switch">
+            Already have an account?
+            <a href="login.html"><button type="button">Sign In</button></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

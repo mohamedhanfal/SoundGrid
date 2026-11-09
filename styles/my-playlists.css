@@ -31,7 +31,10 @@
   gap: 12px;
   cursor: pointer;
   min-height: 248px;
-  transition: background-color var(--transition-fast), border-color var(--transition-fast), transform var(--transition-fast);
+  transition:
+    background-color var(--transition-fast),
+    border-color var(--transition-fast),
+    transform var(--transition-fast);
 }
 
 .create-playlist-tile:hover {

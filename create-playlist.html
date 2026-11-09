@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -8,6 +8,10 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="styles/variables.css" />
@@ -24,58 +28,41 @@
           <div>
             <a href="index.html" class="sidebar-brand">
               <span class="sidebar-brand__icon" aria-hidden="true">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-                  <rect x="2" y="9" width="2.6" height="6" rx="1.3" fill="#1a73e8" />
-                  <rect x="6.5" y="4" width="2.6" height="16" rx="1.3" fill="#1a73e8" />
-                  <rect x="11" y="7" width="2.6" height="10" rx="1.3" fill="#3b82f6" />
-                  <rect x="15.5" y="5" width="2.6" height="14" rx="1.3" fill="#1a73e8" />
-                  <rect x="20" y="10" width="2.6" height="4" rx="1.3" fill="#60a5fa" />
-                </svg>
+                <img
+                  src="resources/SoundGrid logo.png"
+                  alt="SoundGrid Logo"
+                  class="brand-logo-img"
+                />
               </span>
               <span class="sidebar-brand__title">SoundGrid</span>
             </a>
 
             <nav class="sidebar-nav">
               <a href="index.html" class="sidebar-nav__item">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M3 9.5L12 3l9 6.5V20a1 1 0 0 1-1 1h-5v-6h-6v6H4a1 1 0 0 1-1-1V9.5z" />
-                </svg>
+                <i class="ri-home-5-line"></i>
                 <span>Home</span>
               </a>
 
               <a href="search.html" class="sidebar-nav__item">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
-                  <circle cx="11" cy="11" r="7.5" />
-                  <line x1="20" y1="20" x2="16.3" y2="16.3" />
-                </svg>
+                <i class="ri-search-line"></i>
                 <span>Search</span>
               </a>
 
               <a href="my-playlists.html" class="sidebar-nav__item">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
-                  <line x1="3" y1="6" x2="13" y2="6" />
-                  <line x1="3" y1="12" x2="11" y2="12" />
-                  <line x1="3" y1="18" x2="11" y2="18" />
-                  <path d="M16 17V6l5-1v3l-5 1" />
-                  <circle cx="14.5" cy="17.5" r="2.5" />
-                </svg>
+                <i class="ri-play-list-line"></i>
                 <span>My Playlists</span>
               </a>
 
-              <a href="create-playlist.html" class="sidebar-nav__item is-active">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
-                  <circle cx="12" cy="12" r="9" />
-                  <line x1="12" y1="8" x2="12" y2="16" />
-                  <line x1="8" y1="12" x2="16" y2="12" />
-                </svg>
+              <a
+                href="create-playlist.html"
+                class="sidebar-nav__item is-active"
+              >
+                <i class="ri-add-circle-line"></i>
                 <span>Create Playlist</span>
               </a>
 
               <a href="profile.html" class="sidebar-nav__item">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
-                  <circle cx="12" cy="8" r="4" />
-                  <path d="M5 20c0-3.8 3.1-6.5 7-6.5s7 2.7 7 6.5" />
-                </svg>
+                <i class="ri-user-3-line"></i>
                 <span>Profile</span>
               </a>
             </nav>
@@ -83,9 +70,11 @@
 
           <div class="sidebar-footer">
             <a href="playlist-details.html" class="sidebar-auth-switch">
+              <i class="ri-headphone-line"></i>
               <span>Calm Vibes</span>
             </a>
             <a href="login.html" class="sidebar-auth-switch">
+              <i class="ri-lock-line"></i>
               <span>Login / Register</span>
             </a>
           </div>
@@ -94,10 +83,7 @@
         <main class="app-main">
           <header class="app-topbar">
             <div class="topbar-search">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
-                <circle cx="11" cy="11" r="7.5" />
-                <line x1="20" y1="20" x2="16.3" y2="16.3" />
-              </svg>
+              <i class="ri-search-line"></i>
               <input
                 type="search"
                 id="global-topbar-search"
@@ -108,21 +94,22 @@
             </div>
 
             <div class="topbar-profile">
-              <a href="my-playlists.html" class="topbar-icon-btn" title="Shared Playlists">
-                <svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                  <circle cx="9" cy="8" r="3.5" />
-                  <path d="M3 19c0-3.1 2.7-5.5 6-5.5s6 2.4 6 5.5" />
-                  <circle cx="17" cy="9" r="2.5" />
-                  <path d="M15.5 19c.3-2.2 2-4 4.5-4" />
-                </svg>
+              <a
+                href="my-playlists.html"
+                class="topbar-icon-btn"
+                title="Shared Playlists"
+              >
+                <i class="ri-group-line"></i>
               </a>
-              <a href="login.html" class="topbar-badge" title="Switch Account">IS</a>
+              <a href="login.html" class="topbar-badge" title="Switch Account"
+                >MH</a
+              >
               <a href="profile.html" title="View Profile">
-                <svg class="topbar-avatar" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
-                  <rect width="64" height="64" rx="32" fill="#1f2937" />
-                  <circle cx="32" cy="24" r="11" fill="#f3d4c2" />
-                  <path d="M14 58c2-12 11-18 18-18s16 6 18 18" fill="#3b82f6" />
-                </svg>
+                <img
+                  src="https://ui-avatars.com/api/?name=Mohamed+hanfal&background=1f2937&color=fff&size=64"
+                  alt="User Avatar"
+                  class="topbar-avatar"
+                />
               </a>
             </div>
           </header>
@@ -131,7 +118,9 @@
             <div class="my-playlists-header">
               <div>
                 <h1 class="my-playlists-header__title">Create New Playlist</h1>
-                <p class="my-playlists-header__subtitle">Enter playlist details and pick tracks from your library</p>
+                <p class="my-playlists-header__subtitle">
+                  Enter playlist details and pick tracks from your library
+                </p>
               </div>
             </div>
 
@@ -139,10 +128,7 @@
               <div class="create-form-grid">
                 <div class="cover-dropzone" title="Choose cover image">
                   <div class="cover-dropzone__preview">
-                    <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-                      <rect width="200" height="200" rx="22" fill="#dce8ff" />
-                      <circle cx="100" cy="100" r="46" fill="#3b82f6" opacity="0.25" />
-                    </svg>
+                    <i class="ri-image-add-line"></i>
                   </div>
                   <div class="cover-dropzone__title">Upload Cover Image</div>
                   <div class="cover-dropzone__sub">PNG or JPG up to 5MB</div>
@@ -171,8 +157,12 @@
                   </div>
 
                   <div class="form-actions">
-                    <button type="submit" class="btn btn--primary">Save &amp; Open Playlist</button>
-                    <a href="my-playlists.html" class="btn btn--outline">Cancel</a>
+                    <button type="submit" class="btn btn--primary">
+                      Save &amp; Open Playlist
+                    </button>
+                    <a href="my-playlists.html" class="btn btn--outline"
+                      >Cancel</a
+                    >
                   </div>
                 </div>
               </div>
@@ -187,12 +177,14 @@
                     <div class="song-check-row__left">
                       <span class="song-check-row__index">1</span>
                       <div>
-                        <div class="song-check-row__title">Night Changes</div>
-                        <div class="song-check-row__meta">One Direction • Midnight Memories</div>
+                        <div class="song-check-row__title">Faded</div>
+                        <div class="song-check-row__meta">
+                          Alan Walker &bull; Different World
+                        </div>
                       </div>
                     </div>
                     <div class="song-check-row__right">
-                      <span class="song-check-row__duration">3:46</span>
+                      <span class="song-check-row__duration">3:32</span>
                       <input type="checkbox" name="songIds" value="1" checked />
                     </div>
                   </label>
@@ -201,12 +193,14 @@
                     <div class="song-check-row__left">
                       <span class="song-check-row__index">2</span>
                       <div>
-                        <div class="song-check-row__title">Alone</div>
-                        <div class="song-check-row__meta">Alan Walker • Alone</div>
+                        <div class="song-check-row__title">Blinding Lights</div>
+                        <div class="song-check-row__meta">
+                          The Weeknd &bull; After Hours
+                        </div>
                       </div>
                     </div>
                     <div class="song-check-row__right">
-                      <span class="song-check-row__duration">2:40</span>
+                      <span class="song-check-row__duration">3:20</span>
                       <input type="checkbox" name="songIds" value="2" checked />
                     </div>
                   </label>
@@ -215,12 +209,14 @@
                     <div class="song-check-row__left">
                       <span class="song-check-row__index">3</span>
                       <div>
-                        <div class="song-check-row__title">Treat You Better</div>
-                        <div class="song-check-row__meta">Shawn Mendes • Illuminate</div>
+                        <div class="song-check-row__title">Billie Jean</div>
+                        <div class="song-check-row__meta">
+                          Michael Jackson &bull; Thriller
+                        </div>
                       </div>
                     </div>
                     <div class="song-check-row__right">
-                      <span class="song-check-row__duration">3:07</span>
+                      <span class="song-check-row__duration">4:54</span>
                       <input type="checkbox" name="songIds" value="3" checked />
                     </div>
                   </label>
@@ -229,12 +225,14 @@
                     <div class="song-check-row__left">
                       <span class="song-check-row__index">4</span>
                       <div>
-                        <div class="song-check-row__title">On My Way</div>
-                        <div class="song-check-row__meta">Alan Walker • On My Way</div>
+                        <div class="song-check-row__title">Unity</div>
+                        <div class="song-check-row__meta">
+                          TheFatRat &bull; Unity
+                        </div>
                       </div>
                     </div>
                     <div class="song-check-row__right">
-                      <span class="song-check-row__duration">3:13</span>
+                      <span class="song-check-row__duration">4:09</span>
                       <input type="checkbox" name="songIds" value="4" />
                     </div>
                   </label>
@@ -243,12 +241,14 @@
                     <div class="song-check-row__left">
                       <span class="song-check-row__index">5</span>
                       <div>
-                        <div class="song-check-row__title">Starboy</div>
-                        <div class="song-check-row__meta">The Weeknd • Starboy</div>
+                        <div class="song-check-row__title">Srivalli</div>
+                        <div class="song-check-row__meta">
+                          Sid Sriram &bull; Pushpa: The Rise
+                        </div>
                       </div>
                     </div>
                     <div class="song-check-row__right">
-                      <span class="song-check-row__duration">3:50</span>
+                      <span class="song-check-row__duration">3:41</span>
                       <input type="checkbox" name="songIds" value="5" />
                     </div>
                   </label>
@@ -261,43 +261,109 @@
         <footer class="app-player" aria-label="Audio Player">
           <div class="player-now-playing">
             <div class="player-thumb">
-              <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
-                <rect width="64" height="64" fill="#18181b" />
-                <text x="32" y="36" text-anchor="middle" fill="#ffffff" font-size="14" font-weight="800" font-family="Inter, sans-serif">SG</text>
-              </svg>
+              <img
+                src="resources/covers/alan walker cover.jpg"
+                alt="Now Playing"
+                id="player-thumb-img"
+              />
             </div>
             <div class="player-meta">
-              <div class="player-meta__title" id="player-song-title">Night Changes</div>
-              <div class="player-meta__artist" id="player-song-artist">One Direction</div>
+              <div class="player-meta__title" id="player-song-title">Faded</div>
+              <div class="player-meta__artist" id="player-song-artist">
+                Alan Walker
+              </div>
             </div>
           </div>
 
           <div class="player-center">
             <div class="player-transport">
-              <button type="button" class="player-ctrl-btn" id="player-btn-shuffle" aria-label="Shuffle">⇄</button>
-              <button type="button" class="player-ctrl-btn" id="player-btn-prev" aria-label="Previous">⏮</button>
-              <button type="button" class="player-play-circle" id="player-btn-play" aria-label="Play">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" class="player-play-icon">
-                  <polygon points="6,4 20,12 6,20" />
-                </svg>
+              <button
+                type="button"
+                class="player-ctrl-btn"
+                id="player-btn-shuffle"
+                aria-label="Shuffle"
+              >
+                <i class="ri-shuffle-line"></i>
               </button>
-              <button type="button" class="player-ctrl-btn" id="player-btn-next" aria-label="Next">⏭</button>
-              <button type="button" class="player-ctrl-btn" id="player-btn-repeat" aria-label="Repeat">↻</button>
+              <button
+                type="button"
+                class="player-ctrl-btn"
+                id="player-btn-prev"
+                aria-label="Previous"
+              >
+                <i class="ri-skip-back-fill"></i>
+              </button>
+              <button
+                type="button"
+                class="player-play-circle"
+                id="player-btn-play"
+                aria-label="Play"
+              >
+                <i class="ri-play-fill player-play-icon"></i>
+              </button>
+              <button
+                type="button"
+                class="player-ctrl-btn"
+                id="player-btn-next"
+                aria-label="Next"
+              >
+                <i class="ri-skip-forward-fill"></i>
+              </button>
+              <button
+                type="button"
+                class="player-ctrl-btn"
+                id="player-btn-repeat"
+                aria-label="Repeat"
+              >
+                <i class="ri-repeat-2-line"></i>
+              </button>
             </div>
 
             <div class="player-timeline">
               <span class="player-time" id="player-time-current">0:45</span>
-              <input type="range" min="0" max="100" value="20" class="sg-slider" id="player-scrubber" aria-label="Seek timeline" />
-              <span class="player-time player-time--end" id="player-time-total">3:46</span>
+              <input
+                type="range"
+                min="0"
+                max="100"
+                value="20"
+                class="sg-slider"
+                id="player-scrubber"
+                aria-label="Seek timeline"
+              />
+              <span class="player-time player-time--end" id="player-time-total"
+                >3:32</span
+              >
             </div>
           </div>
 
           <div class="player-right">
             <div class="player-volume-wrap">
-              <button type="button" class="player-ctrl-btn" id="player-btn-mute" aria-label="Mute">🔊</button>
-              <input type="range" min="0" max="100" value="65" class="sg-slider" id="player-volume-slider" aria-label="Volume" />
+              <button
+                type="button"
+                class="player-ctrl-btn"
+                id="player-btn-mute"
+                aria-label="Mute"
+              >
+                <i class="ri-volume-up-line"></i>
+              </button>
+              <input
+                type="range"
+                min="0"
+                max="100"
+                value="65"
+                class="sg-slider"
+                id="player-volume-slider"
+                aria-label="Volume"
+              />
             </div>
-            <a href="playlist-details.html" class="player-ctrl-btn" title="Open Current Playlist">☰</a>
+            <a
+              href="playlist-details.html"
+              class="player-ctrl-btn"
+              title="Open Current Playlist"
+              aria-label="Queue"
+            >
+              <i class="ri-play-list-2-fill"></i>
+            </a>
           </div>
         </footer>
       </div>
