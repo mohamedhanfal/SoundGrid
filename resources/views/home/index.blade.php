@@ -3,33 +3,35 @@
 @section('title', 'SoundGrid')
 
 @section('content')
-  <section class="home-hero" aria-label="Featured Playlist Banner">
-    <div class="home-hero__content">
-      <span class="home-hero__tag">Featured Creator Playlist</span>
-      <h1 class="home-hero__title">Alan Walker Hits</h1>
-      <p class="home-hero__subtitle">
-        Signature electronic melodies, driving beats, and cinematic synth anthems featuring Faded, Alone, and On My Way.
-      </p>
-      <div class="home-hero__actions">
-        <button type="button" class="btn btn--primary" id="btn-play-playlist">
-          <i class="ri-play-fill"></i>
-          <span>Listen Now</span>
-        </button>
-        <a href="#" class="btn btn--outline">
-          <span>Open Playlist</span>
-        </a>
+  @if ($featuredPlaylist)
+    <section class="home-hero" aria-label="Featured Playlist Banner">
+      <div class="home-hero__content">
+        <span class="home-hero__tag">Featured Creator Playlist</span>
+        <h1 class="home-hero__title">{{ $featuredPlaylist->title }}</h1>
+        <p class="home-hero__subtitle">
+          {{ $featuredPlaylist->description }}
+        </p>
+        <div class="home-hero__actions">
+          <button type="button" class="btn btn--primary" id="btn-play-playlist">
+            <i class="ri-play-fill"></i>
+            <span>Listen Now</span>
+          </button>
+          <a href="#" class="btn btn--outline">
+            <span>Open Playlist</span>
+          </a>
+        </div>
       </div>
-    </div>
 
-    <div class="home-hero__art">
-      <img
-        src="{{ asset('images/covers/alan walker cover.jpg') }}"
-        alt="Alan Walker Hits"
-        class="home-hero__art-img"
-      />
-      <i class="ri-play-circle-fill cover-play-badge"></i>
-    </div>
-  </section>
+      <div class="home-hero__art">
+        <img
+          src="{{ asset($featuredPlaylist->cover_image) }}"
+          alt="{{ $featuredPlaylist->title }}"
+          class="home-hero__art-img"
+        />
+        <i class="ri-play-circle-fill cover-play-badge"></i>
+      </div>
+    </section>
+  @endif
 
   <section class="sg-section" aria-label="Popular Playlists">
     <div class="sg-section__header">
@@ -38,50 +40,16 @@
     </div>
 
     <div class="playlist-cards-grid">
-      <a href="#" class="playlist-card">
-        <div class="playlist-card__art">
-          <img src="{{ asset('images/covers/alan walker cover.jpg') }}" alt="Alan Walker Hits" class="playlist-card__img" />
-          <i class="ri-play-circle-fill cover-play-badge"></i>
-        </div>
-        <div class="playlist-card__title">Alan Walker Hits</div>
-        <div class="playlist-card__meta">By SK &bull; 5 songs</div>
-      </a>
-
-      <a href="#" class="playlist-card">
-        <div class="playlist-card__art">
-          <img src="{{ asset('images/covers/weeknd cover.jpg') }}" alt="The Weeknd Collection" class="playlist-card__img" />
-          <i class="ri-play-circle-fill cover-play-badge"></i>
-        </div>
-        <div class="playlist-card__title">The Weeknd Collection</div>
-        <div class="playlist-card__meta">By Mohamed hanfal &bull; 5 songs</div>
-      </a>
-
-      <a href="#" class="playlist-card">
-        <div class="playlist-card__art">
-          <img src="{{ asset('images/covers/mj cover.jpg') }}" alt="King of Pop: Michael Jackson" class="playlist-card__img" />
-          <i class="ri-play-circle-fill cover-play-badge"></i>
-        </div>
-        <div class="playlist-card__title">King of Pop: Michael Jackson</div>
-        <div class="playlist-card__meta">By Vidura &bull; 5 songs</div>
-      </a>
-
-      <a href="#" class="playlist-card">
-        <div class="playlist-card__art">
-          <img src="{{ asset('images/covers/thefatrat cover.jpg') }}" alt="TheFatRat Gaming Anthems" class="playlist-card__img" />
-          <i class="ri-play-circle-fill cover-play-badge"></i>
-        </div>
-        <div class="playlist-card__title">TheFatRat Gaming Anthems</div>
-        <div class="playlist-card__meta">By Nethmini &bull; 5 songs</div>
-      </a>
-
-      <a href="#" class="playlist-card">
-        <div class="playlist-card__art">
-          <img src="{{ asset('images/covers/sid.jpg') }}" alt="Sid Sriram Essentials" class="playlist-card__img" />
-          <i class="ri-play-circle-fill cover-play-badge"></i>
-        </div>
-        <div class="playlist-card__title">Sid Sriram Essentials</div>
-        <div class="playlist-card__meta">By Osadi &bull; 5 songs</div>
-      </a>
+      @foreach ($playlists as $playlist)
+        <a href="#" class="playlist-card">
+          <div class="playlist-card__art">
+            <img src="{{ asset($playlist->cover_image) }}" alt="{{ $playlist->title }}" class="playlist-card__img" />
+            <i class="ri-play-circle-fill cover-play-badge"></i>
+          </div>
+          <div class="playlist-card__title">{{ $playlist->title }}</div>
+          <div class="playlist-card__meta">By {{ $playlist->user->name ?? 'SoundGrid' }} &bull; {{ $playlist->songs_count }} songs</div>
+        </a>
+      @endforeach
     </div>
   </section>
 
@@ -104,96 +72,26 @@
           </tr>
         </thead>
         <tbody>
-          <tr
-            class="js-song-row is-active"
-            data-title="Faded"
-            data-artist="Alan Walker"
-            data-duration="3:32"
-            data-cover="{{ asset('images/covers/alan walker cover.jpg') }}"
-          >
-            <td class="col-num">1</td>
-            <td class="col-title">Faded</td>
-            <td class="col-artist">Alan Walker</td>
-            <td class="col-album">Different World</td>
-            <td class="col-duration">3:32</td>
-            <td class="col-more">
-              <button type="button" class="track-more-btn" aria-label="More options">
-                <i class="ri-more-fill"></i>
-              </button>
-            </td>
-          </tr>
-          <tr
-            class="js-song-row"
-            data-title="Blinding Lights"
-            data-artist="The Weeknd"
-            data-duration="3:20"
-            data-cover="{{ asset('images/covers/weeknd cover.jpg') }}"
-          >
-            <td class="col-num">2</td>
-            <td class="col-title">Blinding Lights</td>
-            <td class="col-artist">The Weeknd</td>
-            <td class="col-album">After Hours</td>
-            <td class="col-duration">3:20</td>
-            <td class="col-more">
-              <button type="button" class="track-more-btn" aria-label="More options">
-                <i class="ri-more-fill"></i>
-              </button>
-            </td>
-          </tr>
-          <tr
-            class="js-song-row"
-            data-title="Billie Jean"
-            data-artist="Michael Jackson"
-            data-duration="4:54"
-            data-cover="{{ asset('images/covers/mj cover.jpg') }}"
-          >
-            <td class="col-num">3</td>
-            <td class="col-title">Billie Jean</td>
-            <td class="col-artist">Michael Jackson</td>
-            <td class="col-album">Thriller</td>
-            <td class="col-duration">4:54</td>
-            <td class="col-more">
-              <button type="button" class="track-more-btn" aria-label="More options">
-                <i class="ri-more-fill"></i>
-              </button>
-            </td>
-          </tr>
-          <tr
-            class="js-song-row"
-            data-title="Unity"
-            data-artist="TheFatRat"
-            data-duration="4:09"
-            data-cover="{{ asset('images/covers/thefatrat cover.jpg') }}"
-          >
-            <td class="col-num">4</td>
-            <td class="col-title">Unity</td>
-            <td class="col-artist">TheFatRat</td>
-            <td class="col-album">Unity</td>
-            <td class="col-duration">4:09</td>
-            <td class="col-more">
-              <button type="button" class="track-more-btn" aria-label="More options">
-                <i class="ri-more-fill"></i>
-              </button>
-            </td>
-          </tr>
-          <tr
-            class="js-song-row"
-            data-title="Srivalli"
-            data-artist="Sid Sriram"
-            data-duration="3:41"
-            data-cover="{{ asset('images/covers/sid.jpg') }}"
-          >
-            <td class="col-num">5</td>
-            <td class="col-title">Srivalli</td>
-            <td class="col-artist">Sid Sriram</td>
-            <td class="col-album">Pushpa: The Rise</td>
-            <td class="col-duration">3:41</td>
-            <td class="col-more">
-              <button type="button" class="track-more-btn" aria-label="More options">
-                <i class="ri-more-fill"></i>
-              </button>
-            </td>
-          </tr>
+          @foreach ($recentSongs as $index => $song)
+            <tr
+              class="js-song-row {{ $index === 0 ? 'is-active' : '' }}"
+              data-title="{{ $song->title }}"
+              data-artist="{{ $song->artist }}"
+              data-duration="{{ $song->duration }}"
+              data-cover="{{ asset($song->cover_image) }}"
+            >
+              <td class="col-num">{{ $index + 1 }}</td>
+              <td class="col-title">{{ $song->title }}</td>
+              <td class="col-artist">{{ $song->artist }}</td>
+              <td class="col-album">{{ $song->album }}</td>
+              <td class="col-duration">{{ $song->duration }}</td>
+              <td class="col-more">
+                <button type="button" class="track-more-btn" aria-label="More options">
+                  <i class="ri-more-fill"></i>
+                </button>
+              </td>
+            </tr>
+          @endforeach
         </tbody>
       </table>
     </div>
