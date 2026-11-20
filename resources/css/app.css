@@ -10,6 +10,7 @@
 @import './pages/home.css';
 
 @import './pages/search.css';
+@import './pages/create-playlist.css';
 
 @source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
 @source '../../storage/framework/views/*.php';

@@ -23,7 +23,7 @@
         <span>My Playlists</span>
       </a>
 
-      <a href="#" class="sidebar-nav__item {{ request()->routeIs('playlists.create') ? 'is-active' : '' }}">
+      <a href="{{ route('create-playlist') }}" class="sidebar-nav__item {{ request()->routeIs('create-playlist.create') ? 'is-active' : '' }}">
         <i class="ri-add-circle-line"></i>
         <span>Create Playlist</span>
       </a>
