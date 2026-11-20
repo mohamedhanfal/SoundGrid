@@ -16,3 +16,5 @@
 @import './components/track-table.css';
 
 @import './pages/home.css';
+@import './pages/my-playlists.css';
+@import './pages/playlist-details.css';

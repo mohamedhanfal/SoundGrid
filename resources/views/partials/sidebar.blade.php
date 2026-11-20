@@ -18,7 +18,7 @@
         <span>Search</span>
       </a>
 
-      <a href="#" class="sidebar-nav__item {{ request()->routeIs('playlists.*') ? 'is-active' : '' }}">
+    <a href="{{ route('playlists.index') }}" class="sidebar-nav__item {{ request()->routeIs('playlists.*') ? 'is-active' : '' }}">
         <i class="ri-play-list-line"></i>
         <span>My Playlists</span>
       </a>

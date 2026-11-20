@@ -1,0 +1,235 @@
+.playlist-header {
+  display: flex;
+  align-items: center;
+  gap: 36px;
+  margin-bottom: 36px;
+}
+
+.playlist-cover-art {
+  width: 186px;
+  height: 186px;
+  border-radius: var(--radius-lg);
+  background: var(--cover-bg-calm);
+  box-shadow: var(--shadow-cover);
+  position: relative;
+  overflow: hidden;
+  flex-shrink: 0;
+  display: grid;
+  place-items: center;
+}
+
+.playlist-cover-art img,
+.playlist-cover-art__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  z-index: 1;
+}
+
+.playlist-cover-art::before {
+  content: "";
+  position: absolute;
+  top: -28px;
+  right: -28px;
+  width: 96px;
+  height: 96px;
+  border-radius: 50%;
+  background: var(--cover-blob-blue);
+  opacity: 0.75;
+}
+
+.playlist-cover-art::after {
+  content: "";
+  position: absolute;
+  bottom: -32px;
+  left: -24px;
+  width: 110px;
+  height: 90px;
+  border-radius: 50%;
+  background: var(--cover-blob-purple);
+  opacity: 0.65;
+}
+
+.cover-main-icon {
+  font-size: 5.2rem;
+  background: linear-gradient(135deg, #2563eb, #7c3aed);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  z-index: 1;
+}
+
+.cover-decor-note {
+  position: absolute;
+  top: 22px;
+  left: 24px;
+  font-size: 1.6rem;
+  color: #3b82f6;
+  z-index: 1;
+}
+
+.cover-play-badge {
+  position: absolute;
+  bottom: 16px;
+  right: 16px;
+  font-size: 2.3rem;
+  color: var(--primary-blue);
+  z-index: 2;
+}
+
+.playlist-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.playlist-info__title {
+  font-size: 2.35rem;
+  font-weight: 800;
+  color: var(--text-dark);
+  letter-spacing: -0.025em;
+  line-height: 1.15;
+  margin-bottom: 10px;
+}
+
+.playlist-info__meta {
+  font-size: 0.96rem;
+  color: #374151;
+  font-weight: 400;
+  margin-bottom: 22px;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.playlist-info__dot {
+  color: #6b7280;
+}
+
+.playlist-info__actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.track-table-wrap {
+  width: 100%;
+}
+
+.track-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+.track-table thead th {
+  padding: 12px 14px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: #8892a0;
+  border-bottom: 1px solid var(--border-row);
+}
+
+.track-table thead th.col-num {
+  width: 48px;
+  text-align: center;
+}
+
+.track-table thead th.col-title {
+  width: 32%;
+}
+
+.track-table thead th.col-artist {
+  width: 24%;
+}
+
+.track-table thead th.col-album {
+  width: 24%;
+}
+
+.track-table thead th.col-duration {
+  width: 90px;
+}
+
+.track-table thead th.col-more {
+  width: 54px;
+  text-align: right;
+}
+
+.track-table tbody tr {
+  border-bottom: 1px solid var(--border-row);
+  transition: background-color var(--transition-fast);
+  cursor: pointer;
+}
+
+.track-table tbody tr:hover {
+  background-color: var(--bg-row-hover);
+}
+
+.track-table tbody tr.is-active {
+  background-color: var(--bg-row-active);
+}
+
+.track-table tbody td {
+  padding: 15px 14px;
+  font-size: 0.94rem;
+  color: #2c3545;
+  vertical-align: middle;
+}
+
+.track-table tbody td.col-num {
+  text-align: center;
+  color: #7c8594;
+  font-weight: 500;
+}
+
+.track-table tbody td.col-title {
+  font-weight: 700;
+  color: var(--text-dark);
+}
+
+.track-table tbody tr.is-active td.col-title {
+  color: var(--primary-blue);
+}
+
+.track-table tbody td.col-duration {
+  font-variant-numeric: tabular-nums;
+  color: #2c3545;
+}
+
+.track-table tbody td.col-more {
+  text-align: right;
+}
+
+.track-more-btn {
+  width: 32px;
+  height: 32px;
+  border-radius: var(--radius-full);
+  display: inline-grid;
+  place-items: center;
+  font-size: 1.15rem;
+  color: #7c8594;
+  transition: background-color var(--transition-fast), color var(--transition-fast);
+}
+
+.track-more-btn:hover {
+  background-color: #e4ecfa;
+  color: var(--primary-blue);
+}
+
+@media (max-width: 768px) {
+  .playlist-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+  }
+  .track-table thead th.col-album,
+  .track-table tbody td.col-album {
+    display: none;
+  }
+}

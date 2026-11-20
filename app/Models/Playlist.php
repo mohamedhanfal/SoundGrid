@@ -30,8 +30,11 @@ class Playlist extends Model
         return $this->belongsTo(User::class);
     }
 
-    public function songs(): BelongsToMany
-    {
-        return $this->belongsToMany(Song::class);
-    }
+   public function songs(): BelongsToMany
+{
+    return $this->belongsToMany(Song::class)
+        ->withPivot('position')
+        ->orderByPivot('position')
+        ->orderByPivot('id');
+}
 }
