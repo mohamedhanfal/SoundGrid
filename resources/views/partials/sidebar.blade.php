@@ -13,7 +13,7 @@
         <span>Home</span>
       </a>
 
-      <a href="#" class="sidebar-nav__item {{ request()->routeIs('search') ? 'is-active' : '' }}">
+      <a href="{{ route('search') }}" class="sidebar-nav__item {{ request()->routeIs('search') ? 'is-active' : '' }}">
         <i class="ri-search-line"></i>
         <span>Search</span>
       </a>
