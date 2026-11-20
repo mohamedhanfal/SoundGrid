@@ -1,16 +1,16 @@
 <header class="app-topbar">
-  <form action = "{{ route('search') }}" method = "GET" class="topbar-search">
+  <form action="{{ route('search') }}" method="GET" class="topbar-search">
     <i class="ri-search-line"></i>
     <input
       type="search"
       name="search"
+      value="{{ request('search') }}"
       id="global-topbar-search"
       class="topbar-search__input"
       placeholder="Search songs, artists, playlists..."
       aria-label="Search songs, artists, playlists"
     />
-    </form>
-  
+  </form>
 
   <div class="topbar-profile">
     <a

@@ -2,66 +2,34 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Playlist;
+use App\Models\Song;
 use Illuminate\Http\Request;
+use Illuminate\View\View;
 
 class SearchController extends Controller
 {
+    public function index(Request $request): View
+    {
+        $search = trim((string) $request->input('search', ''));
 
-   public function index(Request $request){
+        $songs = Song::query()
+            ->when($search !== '', function ($query) use ($search): void {
+                $query->where('title', 'like', "%{$search}%")
+                    ->orWhere('artist', 'like', "%{$search}%")
+                    ->orWhere('album', 'like', "%{$search}%")
+                    ->orWhere('genre', 'like', "%{$search}%");
+            })
+            ->get();
 
-      $search = $request->input('search');
-      
-      $songs = [
-    [
-        'title' => 'Faded',
-        'artist' => 'Alan Walker',
-        'duration' => '03:32',
-        'genre' => 'Electronic / EDM'
-    ],
-    [
-        'title' => 'Blinding Lights',
-        'artist' => 'The Weeknd',
-        'duration' => '03:20',
-        'genre' => 'Pop / R&B'
-    ],
-    [
-        'title' => 'Billie Jean',
-        'artist' => 'Michael Jackson',
-        'duration' => '04:54',
-        'genre' => 'Classical'
-    ],
-    [
-        'title' => 'Unity',
-        'artist' => 'TheFatRat',
-        'duration' => '04:11',
-        'genre' => 'Gaming Anthems'
-    ],
-    [
-        'title' => 'Srivalli',
-        'artist' => 'Sid Sriram',
-        'duration' => '03:45',
-        'genre' => 'Soulful / Melodic'
-    ],
-];
+        $playlists = Playlist::with('user')
+            ->withCount('songs')
+            ->when($search !== '', function ($query) use ($search): void {
+                $query->where('title', 'like', "%{$search}%")
+                    ->orWhere('genre', 'like', "%{$search}%");
+            })
+            ->get();
 
-
-      $results = [];
-
-      foreach ($songs as $song) {
-         if(
-          $search == ''|| 
-          stripos($song['title'], $search) !== false ||
-          stripos($song['artist'], $search) !== false
-         ){
-          $results[] = $song;
-         }
-         }
-        
-         return view('home.search',[
-          'search'=>$search, 
-         'songs'=>$results
-         ]);
-      }
-      
-   
+        return view('home.search', compact('search', 'songs', 'playlists'));
+    }
 }
