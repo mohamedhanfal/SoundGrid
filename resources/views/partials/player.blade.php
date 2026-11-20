@@ -1,8 +1,10 @@
 <footer class="app-player" aria-label="Audio Player">
+  <audio id="audio-player" preload="metadata"></audio>
+
   <div class="player-now-playing">
     <div class="player-thumb">
       <img
-        src="{{ asset('images/covers/alan walker cover.jpg') }}"
+        src="{{ asset('audio/thumbnail/alan_walker_faded_thumbnail.jpg') }}"
         alt="Now Playing"
         id="player-thumb-img"
       />
@@ -58,12 +60,13 @@
     </div>
 
     <div class="player-timeline">
-      <span class="player-time" id="player-time-current">0:45</span>
+      <span class="player-time" id="player-time-current">0:00</span>
       <input
         type="range"
         min="0"
         max="100"
-        value="20"
+        step="0.1"
+        value="0"
         class="sg-slider"
         id="player-scrubber"
         aria-label="Seek timeline"

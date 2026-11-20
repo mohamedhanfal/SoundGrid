@@ -14,6 +14,7 @@ class Song extends Model
         'genre',
         'duration',
         'cover_image',
+        'audio_path',
     ];
 
     public function playlists(): BelongsToMany

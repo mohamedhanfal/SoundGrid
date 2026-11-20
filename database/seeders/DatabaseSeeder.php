@@ -12,35 +12,35 @@ class DatabaseSeeder extends Seeder
 {
     public function run(): void
     {
-        $password = Hash::make('123');
+        $password = Hash::make('password123');
 
         $sk = User::create([
             'name' => 'SK',
-            'email' => 'sk@gmail.com',
+            'email' => 'sk@soundgrid.io',
             'password' => $password,
         ]);
 
         $hanfal = User::create([
             'name' => 'Mohamed hanfal',
-            'email' => 'hanfal@gmail.com',
+            'email' => 'hanfal@soundgrid.io',
             'password' => $password,
         ]);
 
         $vidura = User::create([
             'name' => 'Vidura',
-            'email' => 'vidura@gmail.com',
+            'email' => 'vidura@soundgrid.io',
             'password' => $password,
         ]);
 
         $nethmini = User::create([
             'name' => 'Nethmini',
-            'email' => 'nethmini@gmail.com',
+            'email' => 'nethmini@soundgrid.io',
             'password' => $password,
         ]);
 
         $osadi = User::create([
             'name' => 'Osadi',
-            'email' => 'osadi@gmail.com',
+            'email' => 'osadi@soundgrid.io',
             'password' => $password,
         ]);
 
@@ -50,7 +50,8 @@ class DatabaseSeeder extends Seeder
             'album' => 'Different World',
             'genre' => 'Electronic / EDM',
             'duration' => '3:32',
-            'cover_image' => 'images/covers/alan walker cover.jpg',
+            'cover_image' => 'audio/thumbnail/alan_walker_faded_thumbnail.jpg',
+            'audio_path' => 'audio/alan_walker_faded.mp3',
         ]);
 
         $blindingLights = Song::create([
@@ -59,7 +60,8 @@ class DatabaseSeeder extends Seeder
             'album' => 'After Hours',
             'genre' => 'Pop / R&B',
             'duration' => '3:20',
-            'cover_image' => 'images/covers/weeknd cover.jpg',
+            'cover_image' => 'audio/thumbnail/the_weeknd_blinding_lights_thumbnail.jpg',
+            'audio_path' => 'audio/the_weeknd_blinding_lights.mp3',
         ]);
 
         $billieJean = Song::create([
@@ -68,7 +70,8 @@ class DatabaseSeeder extends Seeder
             'album' => 'Thriller',
             'genre' => 'Classics / Funk',
             'duration' => '4:54',
-            'cover_image' => 'images/covers/mj cover.jpg',
+            'cover_image' => 'audio/thumbnail/michael_jackson_billie_jean_thumbnail.jpg',
+            'audio_path' => 'audio/michael_jackson_billie_jean.mp3',
         ]);
 
         $unity = Song::create([
@@ -77,7 +80,8 @@ class DatabaseSeeder extends Seeder
             'album' => 'Unity',
             'genre' => 'Gaming Anthems',
             'duration' => '4:09',
-            'cover_image' => 'images/covers/thefatrat cover.jpg',
+            'cover_image' => 'audio/thumbnail/thefatrat_unity_thumbnail.jpg',
+            'audio_path' => 'audio/thefatrat_unity.mp3',
         ]);
 
         $srivalli = Song::create([
@@ -86,7 +90,8 @@ class DatabaseSeeder extends Seeder
             'album' => 'Pushpa: The Rise',
             'genre' => 'Soulful / Melodic',
             'duration' => '3:41',
-            'cover_image' => 'images/covers/sid cover.jpg',
+            'cover_image' => 'audio/thumbnail/sid_sriram_srivalli_thumbnail.jpg',
+            'audio_path' => 'audio/sid_sriram_srivalli.mp3',
         ]);
 
         $alanWalkerTracks = [
@@ -97,7 +102,8 @@ class DatabaseSeeder extends Seeder
                 'album' => 'Alone',
                 'genre' => 'Electronic / EDM',
                 'duration' => '2:40',
-                'cover_image' => 'images/covers/alan walker cover.jpg',
+                'cover_image' => 'audio/thumbnail/alan_walker_alone_thumbnail.jpg',
+                'audio_path' => 'audio/alan_walker_alone.mp3',
             ])->id,
             Song::create([
                 'title' => 'On My Way',
@@ -105,7 +111,8 @@ class DatabaseSeeder extends Seeder
                 'album' => 'World of Walker',
                 'genre' => 'Electronic / EDM',
                 'duration' => '3:13',
-                'cover_image' => 'images/covers/alan walker cover.jpg',
+                'cover_image' => 'audio/thumbnail/alan_walker_on_my_way_thumbnail.jpg',
+                'audio_path' => 'audio/alan_walker_on_my_way.mp3',
             ])->id,
             Song::create([
                 'title' => 'The Spectre',
@@ -113,7 +120,8 @@ class DatabaseSeeder extends Seeder
                 'album' => 'The Spectre',
                 'genre' => 'Electronic / EDM',
                 'duration' => '3:13',
-                'cover_image' => 'images/covers/alan walker cover.jpg',
+                'cover_image' => 'audio/thumbnail/alan_walker_the_spectre_thumbnail.jpg',
+                'audio_path' => 'audio/alan_walker_the_spectre.mp3',
             ])->id,
             Song::create([
                 'title' => 'Darkside',
@@ -121,7 +129,8 @@ class DatabaseSeeder extends Seeder
                 'album' => 'Different World',
                 'genre' => 'Electronic / EDM',
                 'duration' => '3:31',
-                'cover_image' => 'images/covers/alan walker cover.jpg',
+                'cover_image' => 'audio/thumbnail/alan_walker_darkside_thumbnail.jpg',
+                'audio_path' => 'audio/alan_walker_darkside.mp3',
             ])->id,
         ];
 
@@ -133,7 +142,8 @@ class DatabaseSeeder extends Seeder
                 'album' => 'Starboy',
                 'genre' => 'Pop / R&B',
                 'duration' => '3:50',
-                'cover_image' => 'images/covers/weeknd cover.jpg',
+                'cover_image' => 'audio/thumbnail/the_weeknd_starboy_thumbnail.jpg',
+                'audio_path' => 'audio/the_weeknd_starboy.mp3',
             ])->id,
             Song::create([
                 'title' => 'Save Your Tears',
@@ -141,7 +151,8 @@ class DatabaseSeeder extends Seeder
                 'album' => 'After Hours',
                 'genre' => 'Pop / R&B',
                 'duration' => '3:35',
-                'cover_image' => 'images/covers/weeknd cover.jpg',
+                'cover_image' => 'audio/thumbnail/the_weeknd_save_your_tears_thumbnail.jpg',
+                'audio_path' => 'audio/the_weeknd_save_your_tears.mp3',
             ])->id,
             Song::create([
                 'title' => 'The Hills',
@@ -149,7 +160,8 @@ class DatabaseSeeder extends Seeder
                 'album' => 'Beauty Behind the Madness',
                 'genre' => 'Pop / R&B',
                 'duration' => '4:02',
-                'cover_image' => 'images/covers/weeknd cover.jpg',
+                'cover_image' => 'audio/thumbnail/the_weeknd_the_hills_thumbnail.jpg',
+                'audio_path' => 'audio/the_weeknd_the_hills.mp3',
             ])->id,
             Song::create([
                 'title' => 'Die For You',
@@ -157,7 +169,8 @@ class DatabaseSeeder extends Seeder
                 'album' => 'Starboy',
                 'genre' => 'Pop / R&B',
                 'duration' => '4:20',
-                'cover_image' => 'images/covers/weeknd cover.jpg',
+                'cover_image' => 'audio/thumbnail/the_weeknd_die_for_you_thumbnail.jpg',
+                'audio_path' => 'audio/the_weeknd_die_for_you.mp3',
             ])->id,
         ];
 
@@ -169,7 +182,8 @@ class DatabaseSeeder extends Seeder
                 'album' => 'Thriller',
                 'genre' => 'Classics / Funk',
                 'duration' => '4:18',
-                'cover_image' => 'images/covers/mj cover.jpg',
+                'cover_image' => 'audio/thumbnail/michael_jackson_beat_it_thumbnail.jpg',
+                'audio_path' => 'audio/michael_jackson_beat_it.mp3',
             ])->id,
             Song::create([
                 'title' => 'Smooth Criminal',
@@ -177,7 +191,8 @@ class DatabaseSeeder extends Seeder
                 'album' => 'Bad',
                 'genre' => 'Classics / Funk',
                 'duration' => '4:17',
-                'cover_image' => 'images/covers/mj cover.jpg',
+                'cover_image' => 'audio/thumbnail/michael_jackson_smooth_criminal_thumbnail.jpg',
+                'audio_path' => 'audio/michael_jackson_smooth_criminal.mp3',
             ])->id,
             Song::create([
                 'title' => 'Thriller',
@@ -185,7 +200,8 @@ class DatabaseSeeder extends Seeder
                 'album' => 'Thriller',
                 'genre' => 'Classics / Funk',
                 'duration' => '5:57',
-                'cover_image' => 'images/covers/mj cover.jpg',
+                'cover_image' => 'audio/thumbnail/michael_jackson_thriller_thumbnail.jpg',
+                'audio_path' => 'audio/michael_jackson_thriller.mp3',
             ])->id,
             Song::create([
                 'title' => 'Man in the Mirror',
@@ -193,7 +209,8 @@ class DatabaseSeeder extends Seeder
                 'album' => 'Bad',
                 'genre' => 'Classics / Funk',
                 'duration' => '5:19',
-                'cover_image' => 'images/covers/mj cover.jpg',
+                'cover_image' => 'audio/thumbnail/michael_jackson_man_in_the_mirror_thumbnail.jpg',
+                'audio_path' => 'audio/michael_jackson_man_in_the_mirror.mp3',
             ])->id,
         ];
 
@@ -205,7 +222,8 @@ class DatabaseSeeder extends Seeder
                 'album' => 'Monody',
                 'genre' => 'Gaming Anthems',
                 'duration' => '4:50',
-                'cover_image' => 'images/covers/thefatrat cover.jpg',
+                'cover_image' => 'audio/thumbnail/thefatrat_monody_thumbnail.jpg',
+                'audio_path' => 'audio/thefatrat_monody.mp3',
             ])->id,
             Song::create([
                 'title' => 'Fly Away',
@@ -213,7 +231,8 @@ class DatabaseSeeder extends Seeder
                 'album' => 'Fly Away',
                 'genre' => 'Gaming Anthems',
                 'duration' => '3:14',
-                'cover_image' => 'images/covers/thefatrat cover.jpg',
+                'cover_image' => 'audio/thumbnail/thefatrat_fly_away_thumbnail.jpg',
+                'audio_path' => 'audio/thefatrat_fly_away.mp3',
             ])->id,
             Song::create([
                 'title' => 'The Calling',
@@ -221,7 +240,8 @@ class DatabaseSeeder extends Seeder
                 'album' => 'The Calling',
                 'genre' => 'Gaming Anthems',
                 'duration' => '3:55',
-                'cover_image' => 'images/covers/thefatrat cover.jpg',
+                'cover_image' => 'audio/thumbnail/thefatrat_the_calling_thumbnail.jpg',
+                'audio_path' => 'audio/thefatrat_the_calling.mp3',
             ])->id,
             Song::create([
                 'title' => 'Xenogenesis',
@@ -229,7 +249,8 @@ class DatabaseSeeder extends Seeder
                 'album' => 'Xenogenesis',
                 'genre' => 'Gaming Anthems',
                 'duration' => '3:53',
-                'cover_image' => 'images/covers/thefatrat cover.jpg',
+                'cover_image' => 'audio/thumbnail/thefatrat_xenogenesis_thumbnail.jpg',
+                'audio_path' => 'audio/thefatrat_xenogenesis.mp3',
             ])->id,
         ];
 
@@ -241,7 +262,8 @@ class DatabaseSeeder extends Seeder
                 'album' => 'Oh My Kadavule',
                 'genre' => 'Soulful / Melodic',
                 'duration' => '4:18',
-                'cover_image' => 'images/covers/sid cover.jpg',
+                'cover_image' => 'audio/thumbnail/sid_sriram_kadhaippoma_thumbnail.jpg',
+                'audio_path' => 'audio/sid_sriram_kadhaippoma.mp3',
             ])->id,
             Song::create([
                 'title' => 'Samajavaragamana',
@@ -249,7 +271,8 @@ class DatabaseSeeder extends Seeder
                 'album' => 'Ala Vaikunthapurramuloo',
                 'genre' => 'Soulful / Melodic',
                 'duration' => '3:44',
-                'cover_image' => 'images/covers/sid cover.jpg',
+                'cover_image' => 'audio/thumbnail/sid_sriram_samajavaragamana_thumbnail.jpg',
+                'audio_path' => 'audio/sid_sriram_samajavaragamana.mp3',
             ])->id,
             Song::create([
                 'title' => 'Inkem Inkem',
@@ -257,7 +280,8 @@ class DatabaseSeeder extends Seeder
                 'album' => 'Geetha Govindam',
                 'genre' => 'Soulful / Melodic',
                 'duration' => '4:27',
-                'cover_image' => 'images/covers/sid cover.jpg',
+                'cover_image' => 'audio/thumbnail/sid_sriram_inkem_inkem_thumbnail.jpg',
+                'audio_path' => 'audio/sid_sriram_inkem_inkem.mp3',
             ])->id,
             Song::create([
                 'title' => 'Ennodu Nee Irundhaal',
@@ -265,7 +289,8 @@ class DatabaseSeeder extends Seeder
                 'album' => 'I',
                 'genre' => 'Soulful / Melodic',
                 'duration' => '5:52',
-                'cover_image' => 'images/covers/sid cover.jpg',
+                'cover_image' => 'audio/thumbnail/sid_sriram_ennodu_nee_irundhaal_thumbnail.jpg',
+                'audio_path' => 'audio/sid_sriram_ennodu_nee_irundhaal.mp3',
             ])->id,
         ];
 
