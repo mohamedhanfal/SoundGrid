@@ -18,32 +18,32 @@
     </div>
 
     <div class="category-grid">
-      <div class="category-tile category-tile--all is-selected" data-genre="">
+      <div class="category-tile is-selected" data-genre="">
         <div class="category-tile__title">All</div>
         <div class="category-tile__count">25 tracks</div>
       </div>
 
-      <div class="category-tile category-tile--electronic" data-genre="Electronic / EDM">
+      <div class="category-tile" data-genre="Electronic / EDM">
         <div class="category-tile__title">Electronic / EDM</div>
         <div class="category-tile__count">5 tracks</div>
       </div>
 
-      <div class="category-tile category-tile--pop" data-genre="Pop / R&B">
+      <div class="category-tile" data-genre="Pop / R&B">
         <div class="category-tile__title">Pop / R&amp;B</div>
         <div class="category-tile__count">5 tracks</div>
       </div>
 
-      <div class="category-tile category-tile--classical" data-genre="Classics / Funk">
+      <div class="category-tile" data-genre="Classics / Funk">
         <div class="category-tile__title">Classics / Funk</div>
         <div class="category-tile__count">5 tracks</div>
       </div>
 
-      <div class="category-tile category-tile--calm" data-genre="Gaming Anthems">
+      <div class="category-tile" data-genre="Gaming Anthems">
         <div class="category-tile__title">Gaming Anthems</div>
         <div class="category-tile__count">5 tracks</div>
       </div>
 
-      <div class="category-tile category-tile--acoustic" data-genre="Soulful / Melodic">
+      <div class="category-tile" data-genre="Soulful / Melodic">
         <div class="category-tile__title">Soulful / Melodic</div>
         <div class="category-tile__count">5 tracks</div>
       </div>

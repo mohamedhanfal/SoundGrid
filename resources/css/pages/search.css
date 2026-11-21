@@ -34,54 +34,46 @@
   justify-content: space-between;
   min-height: 104px;
   padding: 20px 18px;
-  border: 1px solid var(--border-light);
+  background: linear-gradient(145deg, #f5f9ff 0%, #edf4ff 100%);
+  border: 1.5px solid #dbe7fb;
   border-radius: var(--radius-md);
   cursor: pointer;
-  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast), border-color var(--transition-fast), background var(--transition-fast);
 }
 
 .category-tile:hover {
+  background: linear-gradient(145deg, #ecf3ff 0%, #e1edff 100%);
+  border-color: #93bbf5;
   transform: translateY(-3px);
   box-shadow: var(--shadow-card-hover);
 }
 
 .category-tile.is-selected {
-  outline: 2.5px solid var(--primary-blue);
+  background: linear-gradient(135deg, #e2eeff 0%, #d3e5ff 100%);
+  border-color: var(--primary-blue);
+  box-shadow: 0 6px 18px rgba(26, 115, 232, 0.16);
 }
 
 .category-tile__title {
   font-size: 1.02rem;
   font-weight: 700;
   color: var(--text-dark);
+  transition: color var(--transition-fast);
+}
+
+.category-tile.is-selected .category-tile__title {
+  color: var(--primary-blue);
 }
 
 .category-tile__count {
   font-size: 0.8rem;
+  font-weight: 500;
   color: var(--text-secondary);
 }
 
-.category-tile--all {
-  background-color: #eef4ff;
-}
-
-.category-tile--calm {
-  background-color: #e6f0ff;
-}
-
-.category-tile--pop {
-  background-color: #f1ebff;
-}
-
-.category-tile--electronic {
-  background-color: #e6f7f5;
-}
-
-.category-tile--classical {
-  background-color: #eef0ff;
-}
-
-.category-tile--acoustic {
-  background-color: #fff1f2;
+.category-tile.is-selected .category-tile__count {
+  color: #1d63c2;
+  font-weight: 600;
 }
 
 .playlist-cards-grid--compact {
