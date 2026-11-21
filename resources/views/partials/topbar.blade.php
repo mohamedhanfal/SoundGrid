@@ -14,7 +14,7 @@
 
   <div class="topbar-profile">
     <a
-      href="#"
+      href="{{ route('playlists.index') }}"
       class="topbar-icon-btn"
       title="Shared Playlists"
     >

@@ -488,6 +488,27 @@
 
   searchInput?.addEventListener('input', applySearchAndGenreFilter);
 
+  const coverInput = document.getElementById('playlist-cover-input');
+  const coverPreviewBox = document.getElementById('cover-preview-box');
+  if (coverInput && coverPreviewBox) {
+    coverInput.addEventListener('change', (e) => {
+      const file = e.target.files && e.target.files[0];
+      if (!file) return;
+      const reader = new FileReader();
+      reader.onload = (ev) => {
+        coverPreviewBox.innerHTML = '';
+        const img = document.createElement('img');
+        img.src = String(ev.target?.result || '');
+        img.alt = 'Cover preview';
+        img.style.width = '100%';
+        img.style.height = '100%';
+        img.style.objectFit = 'cover';
+        coverPreviewBox.appendChild(img);
+      };
+      reader.readAsDataURL(file);
+    });
+  }
+
   bindRowEvents();
   const firstRow = getPageSongRows()[0];
   if (firstRow) {

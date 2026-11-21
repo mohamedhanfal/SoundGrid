@@ -21,7 +21,7 @@
             <i class="ri-play-fill"></i>
             <span>Listen Now</span>
           </button>
-          <a href="#" class="btn btn--outline">
+          <a href="{{ route('playlists.show', $featuredPlaylist->slug) }}" class="btn btn--outline">
             <span>Open Playlist</span>
           </a>
         </div>
@@ -41,13 +41,13 @@
   <section class="sg-section" aria-label="Popular Playlists">
     <div class="sg-section__header">
       <h2 class="sg-section__title">Popular Playlists</h2>
-      <a href="#" class="sg-section__link">View all playlists</a>
+      <a href="{{ route('playlists.index') }}" class="sg-section__link">View all playlists</a>
     </div>
 
     <div class="playlist-cards-grid">
       @foreach ($playlists as $playlist)
         <a
-          href="#"
+          href="{{ route('playlists.show', $playlist->slug) }}"
           class="playlist-card"
           data-playlist-slug="{{ $playlist->slug }}"
           data-playlist-title="{{ $playlist->title }}"

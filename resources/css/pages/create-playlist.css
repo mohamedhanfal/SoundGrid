@@ -176,6 +176,17 @@
     color: var(--text-secondary);
 }
 
+.song-check-row__right {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.song-check-row__duration {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+}
+
 .song-check-row input[type="checkbox"] {
     width: 18px;
     height: 18px;

@@ -96,7 +96,7 @@
       />
     </div>
     <a
-      href="#"
+      href="{{ route('playlists.index') }}"
       class="player-ctrl-btn"
       title="Open Current Playlist"
       aria-label="Queue"

@@ -1,123 +1,94 @@
-
 @extends('layouts.app')
 
-@section('title', 'Create Playlist')
+@section('title', 'SoundGrid - Create Playlist')
 
 @section('content')
+  <div class="my-playlists-header">
+    <div>
+      <h1 class="my-playlists-header__title">Create New Playlist</h1>
+      <p class="my-playlists-header__subtitle">
+        Enter playlist details and pick tracks from your library
+      </p>
+    </div>
+  </div>
 
-<div class="my-playlist-header">
-    <h1 class="my-playlist-title">Create Playlist</h1>
-    <p class="my-playlist-subtitle">
-        Create your own music collection.
-    </p>
-</div>
+  <form action="{{ route('create-playlist.store') }}" method="POST" enctype="multipart/form-data">
+    @csrf
 
-<section class="sg-action">
+    <div class="create-form-grid">
+      <div>
+        <label class="cover-dropzone" title="Choose cover image">
+          <div class="cover-dropzone__preview" id="cover-preview-box">
+            <i class="ri-image-add-line"></i>
+          </div>
+          <span class="cover-dropzone__title">Upload Cover Image</span>
+          <span class="cover-dropzone__sub">PNG or JPG up to 5MB</span>
+          <input type="file" name="cover" id="playlist-cover-input" accept="image/*" hidden />
+        </label>
+      </div>
 
-    <form action="{{ route('create-playlist.store') }}"
-          method="POST"
-          enctype="multipart/form-data">
-
-        @csrf
-
-        <div class="create-form-grid">
-
-            <div>
-                <label class="cover-dropzone">
-
-                    <div class="cover-dropzone__preview">
-                        <i class="ri-image-add-line"></i>
-                    </div>
-
-                    <span class="cover-dropzone__title">
-                        Upload Cover
-                    </span>
-
-                    <span class="cover-dropzone__sub">
-                        Choose a playlist image
-                    </span>
-
-                    <input type="file"
-                           name="cover"
-                           accept="image/*"
-                           hidden>
-                </label>
-            </div>
-
-            <div class="form-fields">
-
-                <div class="form-group">
-                    <label>Playlist Name</label>
-
-                    <input type="text"
-                           name="name"
-                           class="form-control"
-                           placeholder="Enter playlist name"
-                           required>
-                </div>
-
-                <div class="form-group">
-                    <label>Description</label>
-
-                    <textarea name="description"
-                              class="form-control"
-                              placeholder="Write something about your playlist..."></textarea>
-                </div>
-
-                <div class="form-group">
-                    <label>Select Songs</label>
-
-                    <div class="song-checklist">
-
-                        <label class="song-check-row">
-                            <span class="song-check-row__left">
-                                <span class="song-check-row__index">01</span>
-                                <span>
-                                    <span class="song-check-row__title">Faded</span>
-                                    <br>
-                                    <span class="song-check-row__meta">Alan Walker</span>
-                                </span>
-                            </span>
-                            <input type="checkbox" name="songs[]" value="1">
-                        </label>
-
-                        <label class="song-check-row">
-                            <span class="song-check-row__left">
-                                <span class="song-check-row__index">02</span>
-                                <span>
-                                    <span class="song-check-row__title">Blinding Lights</span>
-                                    <br>
-                                    <span class="song-check-row__meta">The Weeknd</span>
-                                </span>
-                            </span>
-                            <input type="checkbox" name="songs[]" value="2">
-                        </label>
-
-                        <label class="song-check-row">
-                            <span class="song-check-row__left">
-                                <span class="song-check-row__index">03</span>
-                                <span>
-                                    <span class="song-check-row__title">Billie Jean</span>
-                                    <br>
-                                    <span class="song-check-row__meta">Michael Jackson</span>
-                                </span>
-                            </span>
-                            <input type="checkbox" name="songs[]" value="3">
-                        </label>
-
-                    </div>
-                </div>
-
-                <div class="form-actions">
-                    <button type="submit">Create Playlist</button>
-                </div>
-
-            </div>
-
+      <div class="form-fields">
+        <div class="form-group">
+          <label for="pl-title-input">Playlist Name</label>
+          <input
+            type="text"
+            id="pl-title-input"
+            name="name"
+            class="form-control"
+            placeholder="Late Night Study Mix"
+            value="{{ old('name') }}"
+            required
+          />
         </div>
 
-    </form>
+        <div class="form-group">
+          <label for="pl-desc-input">Description</label>
+          <textarea
+            id="pl-desc-input"
+            name="description"
+            class="form-control"
+            rows="3"
+            placeholder="Notes about this playlist..."
+          >{{ old('description') }}</textarea>
+        </div>
 
-</section>
+        <div class="form-actions">
+          <button type="submit" class="btn btn--primary">
+            Save &amp; Open Playlist
+          </button>
+          <a href="{{ route('playlists.index') }}" class="btn btn--outline">Cancel</a>
+        </div>
+      </div>
+    </div>
 
+    <section class="sg-section">
+      <div class="sg-section__header">
+        <h2 class="sg-section__title">Select Songs to Add</h2>
+      </div>
+
+      <div class="song-checklist">
+        @foreach ($songs as $index => $song)
+          <label class="song-check-row">
+            <span class="song-check-row__left">
+              <span class="song-check-row__index">{{ $index + 1 }}</span>
+              <span>
+                <span class="song-check-row__title">{{ $song->title }}</span>
+                <br />
+                <span class="song-check-row__meta">{{ $song->artist }} &bull; {{ $song->album }}</span>
+              </span>
+            </span>
+            <span class="song-check-row__right">
+              <span class="song-check-row__duration">{{ $song->duration }}</span>
+              <input
+                type="checkbox"
+                name="songs[]"
+                value="{{ $song->id }}"
+                {{ $index < 3 ? 'checked' : '' }}
+              />
+            </span>
+          </label>
+        @endforeach
+      </div>
+    </section>
+  </form>
 @endsection

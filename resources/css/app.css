@@ -8,9 +8,10 @@
 @import './components/track-table.css';
 
 @import './pages/home.css';
-
 @import './pages/search.css';
+@import './pages/my-playlists.css';
 @import './pages/create-playlist.css';
+@import './pages/playlist-details.css';
 
 @source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
 @source '../../storage/framework/views/*.php';
@@ -19,5 +20,3 @@
   --font-sans: 'Inter', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
     'Segoe UI Symbol', 'Noto Color Emoji';
 }
-@import './pages/my-playlists.css';
-@import './pages/playlist-details.css';

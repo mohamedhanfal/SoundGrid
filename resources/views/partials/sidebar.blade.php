@@ -23,7 +23,7 @@
         <span>My Playlists</span>
       </a>
 
-      <a href="{{ route('create-playlist') }}" class="sidebar-nav__item {{ request()->routeIs('create-playlist.create') ? 'is-active' : '' }}">
+      <a href="{{ route('create-playlist') }}" class="sidebar-nav__item {{ request()->routeIs('create-playlist*') ? 'is-active' : '' }}">
         <i class="ri-add-circle-line"></i>
         <span>Create Playlist</span>
       </a>
@@ -36,7 +36,7 @@
   </div>
 
   <div class="sidebar-footer">
-    <a href="#" class="sidebar-auth-switch">
+    <a href="{{ route('playlists.index') }}" class="sidebar-auth-switch">
       <i class="ri-headphone-line"></i>
       <span>Calm Vibes</span>
     </a>
